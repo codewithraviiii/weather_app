@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Basic Page</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-    <h1>Hello, world!</h1>
-    <button onclick="showMessage()">Click Me</button>
+  <div class="bg-animation"></div>
 
-    <script src="script.js"></script>
+  <div class="weather-app">
+    <div class="header">
+      <h1 class="title">🌦 Pro Weather</h1>
+      <p class="date-time" id="dateTime"></p>
+    </div>
+
+    <div class="search-section">
+      <div class="search-box">
+        <input type="text" placeholder="Search city..." id="cityInput">
+        <button id="searchBtn"><i data-lucide="search"></i></button>
+      </div>
+      <button id="geoBtn" class="geo-btn"><i data-lucide="map-pin"></i> My Location</button>
+    </div>
+
+    <div class="weather-card">
+      <div class="icon">
+        <i data-lucide="sun"></i>
+      </div>
+      <h1 class="temp" id="temperature">27°C</h1>
+      <button id="unitToggle" class="unit-toggle">°C / °F</button>
+      <h2 class="condition" id="condition">Sunny</h2>
+      <p class="location" id="location">Mumbai, India</p>
+    </div>
+
+    <div class="extra-info">
+      <div class="info-box">
+        <i data-lucide="wind"></i>
+        <span id="wind">12 km/h</span>
+      </div>
+      <div class="info-box">
+        <i data-lucide="droplets"></i>
+        <span id="humidity">78%</span>
+      </div>
+      <div class="info-box">
+        <i data-lucide="thermometer"></i>
+        <span id="feelsLike">Feels 30°C</span>
+      </div>
+    </div>
+
+    <div class="forecast">
+      <h3>Weekly Forecast</h3>
+      <div class="forecast-cards" id="forecastCards">
+        <!-- Cards added with JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
-
 </html>
